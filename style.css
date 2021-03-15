@@ -1,0 +1,318 @@
+body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+  }
+*{box-sizing: border-box;}
+.border{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.intro{grid-area: intro;}
+.detail{grid-area: detail;}
+.project-name{grid-area: project-name;}
+.date0{grid-area: date0;}
+.code0{grid-area: code0;}
+.date1{grid-area: date1;}
+.code1{grid-area: code1;}
+.date2{grid-area: date2;}
+.code2{grid-area: code2;}
+.date3{grid-area: date3;}
+.code3{grid-area: code3;}
+.footer{grid-area: footer;}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    'intro intro intro intro'
+    '. detail detail detail'
+    'project-name project-name project-name project-name'
+    'code0 code0 code0 date0'
+    'date1 code1 code1 code1'
+    'code2 code2 code2 date2'
+    'date3 code3 code3 code3'
+    'footer footer footer footer';
+    grid-gap: 20px;
+}
+.hamburger-menu{grid-area: hamburger-menu;}
+.welcome{grid-area: welcome;}
+.profile-img{grid-area: profile-img;}
+.intro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'hamburger-menu hamburger-menu'
+    'welcome profile-img';
+    grid-gap: 20px;
+    /* background-image: url(img/bg.png); */
+    background-color: rgb(15, 84, 116);
+}
+/* Menu */
+.hamburger-menu{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+.hamburger-menu a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    display: inline-block;
+    /* float: right; */
+    text-align: center;
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    padding: 15px 15px;
+    border-right: 1px solid black; 
+    transition: background-color 0.5s;
+}
+
+.hamburger-menu a:hover{
+    background-color: rgb(15, 84, 116);
+}
+.hamburger-menu .icon{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .hamburger-menu a{
+        display: none;
+    }
+    .hamburger-menu a.icon {
+        float: right;
+        display: block;
+    }
+  }
+@media only screen and (max-width: 600px) {
+    .hamburger-menu.responsive {
+        position: fixed;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .hamburger-menu.responsive a.icon {
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+    .hamburger-menu.responsive a {
+        float: none;
+        display: block;
+      
+    }
+}
+
+.welcome{
+    padding: 20px 40px;
+    color: #ffffff;
+}
+.welcome .header{
+    font-family: 'Roboto', sans-serif;  
+}
+.header{
+    margin: 80px 0px 40px 20px;
+}
+.button a{
+    display: inline-block;
+    background: linear-gradient(49deg, rgba(2,0,36,1) 0%, rgba(182,182,232,1) 0%, rgba(21,152,226,1) 0%, rgba(56,204,235,1) 100%);
+    /* box-shadow: 10px 10px 10px -10px rgba(32,84,158,1); */
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.9;
+    transition: opacity .5s;
+}
+.button :hover{
+    opacity:0.3;
+}
+.profile-img{
+    display: flex;
+    align-items: center;
+    margin: 80px 40px 40px 0px;
+}
+.profile-img img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px; 
+}
+.detail{
+    padding: 20px 10px;
+    margin-right: 40px;
+    background-image:url(img/bg2.png) ;
+    background-attachment: fixed;
+    background-position: center;
+    border-radius: 15px;
+}
+.detail h3{   
+    color: rgb(15, 84, 116);
+    transition: font-size;
+}
+
+.self-intro h1{
+    text-align: right;
+    color: rgb(15, 84, 116);
+}
+.skill ul, .media ul{
+    list-style-type: none;
+}
+.media ul li a {
+    text-decoration: none;
+    color: black;
+}
+.project-name{
+    color:rgb(15, 84, 116);
+}
+.project-name, .date0, .date1, .date2, .date3, .code1, .code2, .code3{
+    padding: 10px 20px;
+}
+.project-name{
+    margin: 0 20px;
+}
+  
+.date0, .date1, .date2, .date3{
+    border-radius: 15px;
+}
+.code0, .code1, .code2, .code3{
+    border-bottom: 1px solid black;
+}
+.code0 div h3, .code1 div h3, .code2 div h3, .code3 div h3{
+    color: rgb(15, 84, 116);
+}
+.date0{
+    margin-right: 40px;
+    text-align: left;
+    background-color:  rgba(151, 165, 21, 0.2);
+}
+.date1{
+    margin-left: 40px;
+    text-align: right;
+    background-color:  rgba(219, 49, 49, 0.2);
+}
+.date2{
+    margin-right: 40px;
+    text-align: left;
+    background-color:  rgba(113, 185, 45, 0.2); 
+}
+.date3{
+    margin-left: 40px;
+    text-align: right;
+    background-color:  rgba(94, 49, 219, 0.2); 
+}
+.code1, .code3{
+    margin-right: 40px;
+}
+.code0, .code2{
+    margin-left: 40px;
+}
+
+.pic{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0.5;
+    transition: opacity 1s;
+}
+.pic:hover{
+    opacity: 1;
+}
+
+.footer{
+    text-align: center;
+    padding: 20px 40px;
+    margin-top: 50px;
+    background-color: rgb(15, 84, 116);
+    color: #ffffff;
+}
+.media-footer{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 30px;
+}
+.media-footer div a {
+    color: #ffffff;
+}
+.hide{
+    display: none;
+}
+.show{
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    /* position: absolute; */
+    background-color:rgba(0, 0, 0, 0.8); ;
+    color: #ffffff;
+    width: 100%;
+    min-height: 100%;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+}
+
+.close-button a{
+    color: #ffffff;
+    font-size: 30px;
+}
+@media only screen and (max-width: 600px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'intro'
+        'detail'
+        'project-name'
+        'date0'
+        'code0'
+        'date1'
+        'code1'
+        'date2'
+        'code2'
+        'date3'
+        'code3'
+        'footer';
+    }
+    .intro{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'hamburger-menu'
+        'welcome'
+        'profile-img';
+        grid-gap: 0;
+    }
+    .profile-img{
+        margin: 0;
+    }
+    .detail{
+        margin:  0;
+        padding: 0 20px;
+    }
+    .self-intro h1{
+        text-align: left;
+    }
+    .project-name{
+        margin: 0 20px;
+        padding: 0;
+    }
+    .date0, .date1, .date2, .date3{
+        text-align: left;
+        margin: 0;
+        padding: 0px 20px;
+        background-color: #ffffff;
+    }
+    .code0, .code1, .code2, .code3{
+        padding: 0 20;
+        margin: 0;
+        border-bottom: 1px dotted black;
+    } 
+    .pic{
+        width: 50%;
+        height: auto;
+    }
+}
